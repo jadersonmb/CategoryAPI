@@ -52,6 +52,14 @@ public class CategoryResource implements Serializable {
         Page<CategoryDTO> listAllCategoryDTO = categoryService.listAll(pageable, filter);
         return ResponseEntity.ok().body(listAllCategoryDTO);
     }
+    
+    @GetMapping(value = "/{id}")
+    public ResponseEntity<?> findById(Pageable pageable, @PathVariable UUID id) {
+        log.debug("REST request to get id Category");
+
+        CategoryDTO categoryDTO = categoryService.findById(id);
+        return ResponseEntity.ok().body(categoryDTO);
+    }
 
     @PostMapping
     public ResponseEntity<?> save(@RequestBody @Valid CategoryDTO categoryDTO) {
