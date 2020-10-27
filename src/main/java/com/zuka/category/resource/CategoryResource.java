@@ -33,7 +33,7 @@ import com.zuka.category.exception.Problem;
 import com.zuka.category.service.CategoryService;
 
 @RestController()
-@RequestMapping(value = "/api/category")
+@RequestMapping(value = "/category")
 public class CategoryResource implements Serializable {
     private static final long serialVersionUID = 1L;
 
