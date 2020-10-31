@@ -32,8 +32,8 @@ import com.zuka.category.exception.CategoryException;
 import com.zuka.category.exception.Problem;
 import com.zuka.category.service.CategoryService;
 
-@RestController()
-@RequestMapping(value = "/category")
+@RestController
+@RequestMapping
 public class CategoryResource implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -53,7 +53,7 @@ public class CategoryResource implements Serializable {
         return ResponseEntity.ok().body(listAllCategoryDTO);
     }
     
-    @GetMapping(value = "/{id}")
+    @GetMapping(value = "/findById/{id}")
     public ResponseEntity<?> findById(Pageable pageable, @PathVariable UUID id) {
         log.debug("REST request to get id Category");
 
